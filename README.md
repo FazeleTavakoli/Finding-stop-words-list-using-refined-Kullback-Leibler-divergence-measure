@@ -1,1 +1,7 @@
-# Finding-stop-words-list-using-refined-Kullback-Leibler-divergence-measure
+# Finding-stop-words-list-using-refined-Kullback-Leibler-divergence-measureIn this project a new approach for finding stop words in a particular corpus has been implemented. 
+Step 1: First of all, we should chooses a random term from the lexicon file which contains stems of the terms in a specific corpus. For getting this file, we obtains the tokens of terms and then obtains their stems. So a tokenizer and a stemmer should be added to this program by users.  Then we find all corpus files which have that specific random term. In the next step Kullback-Leibler divergence measure should be used to assign a weight to each term in the retrieved documents. The terms with higher weights are more informative. Then all obtained terms weights are normalized by dividing each weight by the maximum weight. After sorting the terms by their normalized weights, top X (that is a parameter) terms which have the least weights are removed.
+Step 1 should be repeated for Y times(Y is a parameter).
+After repeating the step 1 , Y times, we have a list which includes Y*X elements.
+Step2: in this step, we merge those elements of the list which contain the same term and get their average weight. We assign this average weight to that term.
+Step 3: in this step, we sort the list in ascending order based on their weights.
+Step 4: in the last step, we extract top L (L is a parameter) terms as the stop word list. Note that these terms have the least weight.
